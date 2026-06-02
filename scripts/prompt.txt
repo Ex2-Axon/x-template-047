@@ -1,0 +1,161 @@
+You are building a daily UI project. Below is the theme specification for today.
+
+## Theme Context (daily-context.json)
+```json
+{
+  "day": 47,
+  "date": "2026-05-31",
+  "version": "1.47.0",
+  "project_name": "x-template-047",
+  "theme": {
+    "name": "LUMEN-ROOTS MATRIX",
+    "style": "A profound fusion of minimal-dark luxury and solarpunk optimism. Deep, rich organic darks serve as the canvas for luminous, bio-integrated elements. Expect a sophisticated interplay of sharp geometric tech-forms and fluid, root-like organic lines, all subtly pulsating with ethereal glows and verdant energy. The design evokes a future where technology is indistinguishable from nature, ultra-modern yet deeply resonant with life.",
+    "mood": "Ethereal, Verdant, Futuristic, Serene, Resilient"
+  },
+  "palette": {
+    "background": "#0F1A17",
+    "surface": "#1B2B26",
+    "primary": "#3ECFBB",
+    "accent": "#F5A623",
+    "text": "#E0E0E0",
+    "muted": "#8F9A95"
+  },
+  "typography": {
+    "heading": "Clash Display",
+    "body": "Outfit",
+    "size": "fluid-optimized-scale"
+  },
+  "layout": {
+    "structure": "asymmetric|bioluminescent-grids",
+    "density": "spacious|organic-flow",
+    "border_style": "Ethereal glow lines, organic soft edges intersecting sharp metallic accents"
+  },
+  "animation": {
+    "level": "high",
+    "style": "Magnetic hover effects, subtle parallax depth on organic layers, fluid morphing transitions, and a pervasive bioluminescent shimmer on interactive elements."
+  },
+  "components": {
+    "hero_text": "VERDANT FUTURE",
+    "subtitle": "Crafting tomorrow's digital ecosystems with bio-integrated intelligence and luminous design.",
+    "button_label": "INITIATE GROWTH",
+    "badge_text": "VERDANT PROTOCOL"
+  },
+  "commit_message": "feat: UI Day 47 — Experimental Theme",
+  "source": "gemini-key1",
+  "selected_component": {
+    "category": "Buttons",
+    "component": "PozDevill_hard-cow-33.html",
+    "path": "C:\\Users\\User\\Documents\\GitHub\\Axon\\x-components\\Buttons\\PozDevill_hard-cow-33.html",
+    "content": "<button>Button</button>\n<style>\n/* Tags: button */\nbutton {\n  position: relative;\n  font-family: 'Heebo', sans-serif;\n  padding: 12px 40px;\n  border: 0;\n  background: rgb(148, 1, 1);\n  color: #ffffff;\n  font-weight: 500;\n  font-size: 1em;\n  border-radius: 8px;\n  overflow: hidden;\n  cursor: pointer;\n  transition: 0.3s ease-in-out;\n}\n\nbutton:hover {\n  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.562);\n  transform: scale(1.01);\n  box-shadow: inset 0px 0px 10px rgba(255, 0, 0, 0.575);\n}\n\nbutton::after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: -100px;\n  width: 50%;\n  height: 100%;\n  transform: rotate(80deg);\n  background: #ffffff77;\n  filter: blur(10px);\n  transition: 0.6s ease-in-out;\n}\n\nbutton:hover::after {\n  left: 100%;\n}\n</style>"
+  }
+}
+```
+
+## Selected Component Reference
+- Category: Buttons
+- Component: PozDevill_hard-cow-33.html
+- Path: C:\Users\User\Documents\GitHub\Axon\x-components\Buttons\PozDevill_hard-cow-33.html
+
+Use the selected component HTML below as the primary design reference for the new UI. Keep the structure and styling assumptions in mind while rewriting the requested files.
+```html
+<button>Button</button>
+<style>
+/* Tags: button */
+button {
+  position: relative;
+  font-family: 'Heebo', sans-serif;
+  padding: 12px 40px;
+  border: 0;
+  background: rgb(148, 1, 1);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1em;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.562);
+  transform: scale(1.01);
+  box-shadow: inset 0px 0px 10px rgba(255, 0, 0, 0.575);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 50%;
+  height: 100%;
+  transform: rotate(80deg);
+  background: #ffffff77;
+  filter: blur(10px);
+  transition: 0.6s ease-in-out;
+}
+
+button:hover::after {
+  left: 100%;
+}
+</style>
+```
+
+## Your Task
+Completely redesign the UI by rewriting these three files from scratch:
+- `src/App.tsx`
+- `src/App.css`
+- `src/index.css`
+
+## Rules for App.tsx
+1. Keep ALL existing imports:
+   - `import { useState, useEffect, useRef } from 'react'`
+   - `import reactLogo from './assets/react.svg'`
+   - `import viteLogo from './assets/vite.svg'`
+   - `import heroImg from './assets/hero.png'`
+   - `import './App.css'`
+2. Keep the `CounterNum` component (useRef + useEffect animation)
+3. Keep the counter button with `onClick` / `setCount` handler
+4. Keep the Documentation section (Vite/React links)
+5. Keep the Social section (GitHub/Discord/X/Bluesky links + SVG icons)
+6. Do NOT use CSS custom properties (`--var-name`) in inline `style` attributes - TypeScript will error
+
+## Rules for CSS
+- Apply the palette, typography, layout structure, animation level, and component text from the JSON above
+- Use Google Fonts via `@import` in `index.css`
+- Match the theme mood: Ethereal, Verdant, Futuristic, Serene, Resilient
+
+## Mandatory Requirements (apply to every build)
+
+### 1. Responsive - Mobile First
+- Design for mobile (320px) first, scale up with `min-width` breakpoints
+- Touch targets minimum 44x44px
+- No horizontal scroll on any screen size
+- Fluid typography: use `clamp()` or responsive units (`rem`, `%`, `vw`)
+- Images and layout must reflow gracefully at 320px, 768px, 1280px
+
+### 2. Footer Copyright
+- The page MUST have a `<footer>` at the bottom
+- Footer text: `© 2026 Microtronic Co., Ltd. All rights reserved. Credit By Axon.`
+- Legal: [Privacy Policy](https://microtronic-thailand.github.io/privacy-policy/?lang=en)
+- Style the footer to match the theme palette (muted text on surface background)
+
+### 3. SEO Standards
+- `index.html` must have a descriptive `<title>`: `VERDANT FUTURE - LUMEN-ROOTS MATRIX | Microtronic`
+- Add `<meta name="description">` with the subtitle: `Crafting tomorrow's digital ecosystems with bio-integrated intelligence and luminous design.`
+- Add `<meta name="keywords">` relevant to the theme
+- Add Open Graph tags: `og:title`, `og:description`, `og:type` (website)
+- All images must have meaningful `alt` attributes
+- Use semantic HTML: `<header>`, `<main>`, `<section>`, `<footer>`, `<nav>` where appropriate
+- Heading hierarchy: one `<h1>` (hero), `<h2>` for sections - no skipping levels
+
+### 4. Extreme Effects & Animations
+- Add extremely impressive effects and animations (multiply by 10) to make it look stunning!
+- Focus on hover effects, background animations, micro-interactions, and parallax.
+
+## After saving all files
+1. Update `version` in `package.json` to `1.47.0`
+2. Update `<title>` and meta tags in `index.html` as specified above
+3. Run: `pnpm build`
+4. If build succeeds → write `done` to `scripts/build-done.flag`
+5. If build fails with TypeScript errors → fix them and rebuild
